@@ -1,0 +1,24 @@
+//
+   Created by hckstl on 6/11/15.
+.container
+  br
+  h1 PREGUNTA ESTUDIANTES
+
+  div.gridStyles(ng-grid="listadoPreguntas")
+
+  #eliminarPreguntaModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type="button", data-dismiss="modal")
+            span(aria-hidden="true") &#215;
+            span.sr-only Close
+          h4#myModalLabel.modal-title Eliminar Pregunta.
+        .modal-body
+          p ¿Esta seguro que desea eliminar el pregunta&nbsp;
+            strong
+              | {{seleccion[0].pregunta}}
+            | ?
+        .modal-footer
+          button.btn.btn-default(type="button", data-dismiss="modal") Cancelar
+          button.btn.btn-primary(type="button", data-dismiss="modal", ng-click="removeRow(seleccion[0])") Eliminar

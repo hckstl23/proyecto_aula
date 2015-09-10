@@ -1,0 +1,45 @@
+<!--
+<Created>by hckstl on 6/9/15.</Created>--><br/><br/>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div align="center">
+        <label>INGRESO DE PREGUNTAS
+          <section id="Ingreso">
+            <form id="nuevaPreguntaForm" name="crearPreguntaForm">
+              <div id="IngresoEnunciado" class="panel panel-default">
+                <div class="form-group">
+                  <label for="enunciado" class="pull-left">Enunciado</label><br/>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></div>
+                </div>
+                <textarea rows="3" type="text" name="enunciado" ng-required="true" id="enunciado" ng-model="pregunta.enunciado" class="form-control"></textarea>
+              </div><br/>
+              <div id="SubIngreso" class="panel panel-default">
+                <div class="form-group">
+                  <label for="descripcion" class="pull-left">Respuesta</label><br/>
+                </div>
+                <div class="input-group"><span class="input-group-addon">
+                    <input type="checkbox" name="" value=""/></span>
+                  <textarea rows="2" type="text" name="descripcion" ng-required="true" id="descripcion" ng-model="respuesta.descripcion" class="form-control"></textarea>
+                </div>
+                <button type="button" ng-click="addOpcionRespuesta(respuesta)" class="btn btn-primary btn-xs pull-right">Agregar</button>
+              </div>
+            </form>
+          </section>
+        </label>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <form>
+        <h3>Pregunta:</h3>
+        <label>{{pregunta.enunciado}}</label>
+        <ul ng-repeat="datos in conjuntoOpciones">
+          <input type="checkbox" name="{{'item' + 1}}" value=""/>{{datos}}
+        </ul>
+        <button type="button" ng-show="pregunta.enunciado" ng-click="guardar(pregunta)" class="btn btn-primary btn-xs pull-right">Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>

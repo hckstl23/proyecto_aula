@@ -1,0 +1,43 @@
+br
+br
+.container
+  .row
+    .col-lg-8
+      form
+        h3 Responda:
+        .panel.panel-default(id="frmRespuesta")
+          label {{listaPreguntas[listaPreguntas.length - 1].enunciado}}
+          //ul(ng-repeat="datos in listaPreguntas[listaPreguntas.length - 1].opciones", ng-init="iddatos=$index;")
+            input(type="checkbox", name="iddatos", id="iddatos")
+            | {{ datos }}
+          ul
+            input(type="checkbox", name="item1", ng-model="item1", ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[0]")
+            | {{listaPreguntas[listaPreguntas.length - 1].opciones[0]}}
+            br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[0]")
+            input(type="checkbox", name="item2", ng-model="item2", ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[1]")
+            | {{listaPreguntas[listaPreguntas.length - 1].opciones[1]}}
+            br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[1]")
+            input(type="checkbox", name="item3", ng-model="item3", ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[2]")
+            | {{listaPreguntas[listaPreguntas.length - 1].opciones[2]}}
+            br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[2]")
+            input(type="checkbox", name="item4", ng-model="item4", ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[3]")
+            | {{listaPreguntas[listaPreguntas.length - 1].opciones[3]}}
+            br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[3]")
+            input(type="checkbox", name="item5", ng-model="item5", ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[4]")
+            | {{listaPreguntas[listaPreguntas.length - 1].opciones[4]}}
+            br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[4]")
+            input(type="checkbox", name="item6", ng-model="item6", ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[5]")
+            | {{listaPreguntas[listaPreguntas.length - 1].opciones[5]}}
+            br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[5]")
+            input(type="checkbox", name="item7", ng-model="item7", ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[6]")
+            | {{listaPreguntas[listaPreguntas.length - 1].opciones[6]}}
+            br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[6]")
+            input(type="checkbox", name="item8", ng-model="item8", ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[7]")
+            | {{listaPreguntas[listaPreguntas.length - 1].opciones[7]}}
+            br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[7]")
+            input(type="checkbox", name="item9", ng-model="item9", ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[8]")
+            | {{listaPreguntas[listaPreguntas.length - 1].opciones[8]}}
+            br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[8]")
+            input(type="checkbox", name="item10", ng-model="item10", ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[9]")
+            | {{listaPreguntas[listaPreguntas.length - 1].opciones[9]}}
+          button.btn.btn-primary.btn-xs.pull-right(type="button", ng-click="guardarRespuestas(listaPreguntas[listaPreguntas.length - 1])") Enviar

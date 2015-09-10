@@ -1,0 +1,97 @@
+.container
+  br
+  h1 PREGUNTA
+    .row
+      .col-md-3.col-md-offset-9
+        a.btn.btn-primary.btn-md.pull-right(href='#/crearpregunta/')
+          i.glyphicon.glyphicon-plus-sign
+          | &nbsp;&nbsp;Agregar Nuevo
+    br
+  div.gridStyles(ng-grid="listadoPreguntas")
+
+  #guardarPreguntaModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type="button", data-dismiss="modal")
+            span(aria-hidden="true") &#215;
+            span.sr-only Close
+          h4#myModalLabel.modal-title Nuevo Pregunta.
+          p#myModalLabel.modal-title Todos los campos son requeridos.
+        .modal-body
+          form#guardarPreguntaForm(name="guardarPreguntaForm")
+            label(for="enunciado") Enunciado
+            .input-group
+              .input-group-addon
+                i.glyphicon.glyphicon-bookmark
+              input.input-sm(type="text", name="enunciado", id="enunciado", ng-model="pregunta.enunciado")
+
+            label(for="item1") Item1
+            .input-group
+              .input-group-addon
+                i.glyphicon.glyphicon-bookmark
+              input.input-sm(type="text", name="item1", id="item1", ng-model="pregunta.item1")
+
+            label(for="item2") Item2
+            .input-group
+              .input-group-addon
+                i.glyphicon.glyphicon-bookmark
+              input.input-sm(type="text", name="item2", id="item2", ng-model="pregunta.item2")
+        .modal-footer
+          button.btn.btn-default(type="button", data-dismiss="modal") Cancelar
+          button.btn.btn-primary(type="button", data-dismiss="modal", ng-click="guardar(pregunta)") Guardar
+
+  #eliminarPreguntaModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type="button", data-dismiss="modal")
+            span(aria-hidden="true") &#215;
+            span.sr-only Close
+          h4#myModalLabel.modal-title Eliminar Pregunta.
+        .modal-body
+          p ¿Esta seguro que desea eliminar el pregunta&nbsp;
+            strong
+              | {{seleccion[0].pregunta}}
+            | ?
+        .modal-footer
+          button.btn.btn-default(type="button", data-dismiss="modal") Cancelar
+          button.btn.btn-primary(type="button", data-dismiss="modal", ng-click="removeRow(seleccion[0])") Eliminar
+
+  //Formulario para editar un producto
+  #editarPreguntaModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type="button", data-dismiss="modal")
+            span(aria-hidden="true") &#215;
+            span.sr-only Close
+          h4#myModalLabel.modal-title Editar Pregunta.
+          p#myModalLabel.modal-title Todos los campos son requeridos.
+        .modal-body
+          //Aqui va el contenido pricipal
+          form#editarPreguntaForm(name="editarPreguntaForm")
+            //Input del nombre
+            label(for="cedula") Cédula
+            .input-group
+              .input-group-addon
+                i.glyphicon.glyphicon-bookmark
+              input.form-control(type="text", name="cedula", ng-required="true", id="cedula", ng-model="pregunta.cedula")
+              //span.glyphicon.glyphicon-remove.form-control-feedback(ng-if="editarPreguntaForm.cedula.$invalid && editarProductoForm.descripcion.$dirty")
+            //span.help-block(ng-if="editarProductoForm.descripcion.$invalid && editarProductoForm.descripcion.$dirty") Campo inválido.
+            label(for="apellido") Apellido
+            .input-group
+              .input-group-addon
+                i.glyphicon.glyphicon-bookmark
+              input.form-control(type="text", name="apellido", ng-required="true", id="apellido", ng-model="pregunta.apellido")
+
+            label(for="nombre") Nombre
+            .input-group
+              .input-group-addon
+                i.glyphicon.glyphicon-bookmark
+              input.form-control(type="text", name="nombre", ng-required="true", id="nombre", ng-model="pregunta.nombre")
+        .modal-footer
+          button.btn.btn-default(type="button", data-dismiss="modal") Cancelar
+          button.btn.btn-primary(type="button", data-dismiss="modal", ng-click="editar(pregunta)") Guardar
+
+

@@ -1,0 +1,42 @@
+br
+br
+.container
+  .row
+    .col-lg-4
+      form
+        h3 Resultados:
+        .panel.panel-default(id="frmResultados")
+          label {{listaPreguntas[listaPreguntas.length - 1].enunciado}}
+            //ul(ng-repeat="datos in listaPreguntas[listaPreguntas.length - 1].opciones")
+              label {{ datos }}
+            ul
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].opciones[0]") {{listaPreguntas[listaPreguntas.length - 1].opciones[0]}}
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[0]") {{listaPreguntas[listaPreguntas.length - 1].respuestas[0].length - 1}}
+              br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[0]")
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].opciones[1]") {{listaPreguntas[listaPreguntas.length - 1].opciones[1]}}
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[1]") {{listaPreguntas[listaPreguntas.length - 1].respuestas[1].length - 1}}
+              br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[1]")
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].opciones[2]") {{listaPreguntas[listaPreguntas.length - 1].opciones[2]}}
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[2]") {{listaPreguntas[listaPreguntas.length - 1].respuestas[2].length - 1}}
+              br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[2]")
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].opciones[3]") {{listaPreguntas[listaPreguntas.length - 1].opciones[3]}}
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[3]") {{listaPreguntas[listaPreguntas.length - 1].respuestas[3].length - 1}}
+              br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[3]")
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].opciones[4]") {{listaPreguntas[listaPreguntas.length - 1].opciones[4]}}
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[4]") {{listaPreguntas[listaPreguntas.length - 1].respuestas[4].length - 1}}
+              br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[4]")
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].opciones[5]") {{listaPreguntas[listaPreguntas.length - 1].opciones[5]}}
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[5]") {{listaPreguntas[listaPreguntas.length - 1].respuestas[5].length} - 1}
+              br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[5]")
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].opciones[6]") {{listaPreguntas[listaPreguntas.length - 1].opciones[6]}}
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[6]") {{listaPreguntas[listaPreguntas.length - 1].respuestas[6].length} - 1}
+              br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[6]")
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].opciones[7]") {{listaPreguntas[listaPreguntas.length - 1].opciones[7]}}
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[7]") {{listaPreguntas[listaPreguntas.length - 1].respuestas[7].length} - 1}
+              br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[7]")
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].opciones[8]") {{listaPreguntas[listaPreguntas.length - 1].opciones[8]}}
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[8]") {{listaPreguntas[listaPreguntas.length - 1].respuestas[8].length} - 1}
+              br(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[8]")
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].opciones[9]") {{listaPreguntas[listaPreguntas.length - 1].opciones[9]}}
+              label(ng-show="listaPreguntas[listaPreguntas.length - 1].respuestas[9]") {{listaPreguntas[listaPreguntas.length - 1].respuestas[9].length} - 1}
+

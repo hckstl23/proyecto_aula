@@ -1,0 +1,21 @@
+//
+   Created by hckstl on 6/9/15.
+br
+br
+.container
+  .row
+    .col-lg-4
+      div(align="center")
+        label INGRESO DE PREGUNTAS
+          section(id="Ingreso")
+            form#nuevaPreguntaForm(name="crearPreguntaForm")
+              .panel.panel-default(id="IngresoEnunciado")
+                .form-group
+                  label.pull-left(for="enunciado") Enunciado
+                  br
+                .input-group
+                  .input-group-addon
+                    i.glyphicon.glyphicon-bookmark
+                textarea.form-control(rows="3", type="text", name="enunciado", ng-required="true", id="enunciado", ng-model="pregunta.enunciado")
+                br
+                button.btn.btn-primary.btn-xs.pull-right(type="button", ng-click="guardar(pregunta)") Agregar

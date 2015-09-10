@@ -1,0 +1,99 @@
+
+<div class="container"><br/>
+  <h1>PREGUNTA
+    <div class="row">
+      <div class="col-md-3 col-md-offset-9"><a href="#/crearpregunta/" class="btn btn-primary btn-md pull-right"><i class="glyphicon glyphicon-plus-sign"></i>&nbsp;&nbsp;Agregar Nuevo</a></div>
+    </div><br/>
+  </h1>
+  <div ng-grid="listadoPreguntas" class="gridStyles"></div>
+  <div id="guardarPreguntaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&#215;</span><span class="sr-only">Close</span></button>
+          <h4 id="myModalLabel" class="modal-title">Nuevo Pregunta.</h4>
+          <p id="myModalLabel" class="modal-title">Todos los campos son requeridos.</p>
+        </div>
+        <div class="modal-body">
+          <form id="guardarPreguntaForm" name="guardarPreguntaForm">
+            <label for="enunciado">Enunciado</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></div>
+              <input type="text" name="enunciado" id="enunciado" ng-model="pregunta.enunciado" class="input-sm"/>
+            </div>
+            <label for="item1">Item1</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></div>
+              <input type="text" name="item1" id="item1" ng-model="pregunta.item1" class="input-sm"/>
+            </div>
+            <label for="item2">Item2</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></div>
+              <input type="text" name="item2" id="item2" ng-model="pregunta.item2" class="input-sm"/>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+          <button type="button" data-dismiss="modal" ng-click="guardar(pregunta)" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="eliminarPreguntaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&#215;</span><span class="sr-only">Close</span></button>
+          <h4 id="myModalLabel" class="modal-title">Eliminar Pregunta.</h4>
+        </div>
+        <div class="modal-body">
+          <p>¿Esta seguro que desea eliminar el pregunta&nbsp;<strong>{{seleccion[0].pregunta}}</strong>?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+          <button type="button" data-dismiss="modal" ng-click="removeRow(seleccion[0])" class="btn btn-primary">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Formulario para editar un producto-->
+  <div id="editarPreguntaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&#215;</span><span class="sr-only">Close</span></button>
+          <h4 id="myModalLabel" class="modal-title">Editar Pregunta.</h4>
+          <p id="myModalLabel" class="modal-title">Todos los campos son requeridos.</p>
+        </div>
+        <div class="modal-body">
+          <!--Aqui va el contenido pricipal-->
+          <form id="editarPreguntaForm" name="editarPreguntaForm">
+            <!--Input del nombre-->
+            <label for="cedula">Cédula</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></div>
+              <input type="text" name="cedula" ng-required="true" id="cedula" ng-model="pregunta.cedula" class="form-control"/>
+              <!--span.glyphicon.glyphicon-remove.form-control-feedback(ng-if="editarPreguntaForm.cedula.$invalid && editarProductoForm.descripcion.$dirty")-->
+            </div>
+            <!--span.help-block(ng-if="editarProductoForm.descripcion.$invalid && editarProductoForm.descripcion.$dirty") Campo inválido.-->
+            <label for="apellido">Apellido</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></div>
+              <input type="text" name="apellido" ng-required="true" id="apellido" ng-model="pregunta.apellido" class="form-control"/>
+            </div>
+            <label for="nombre">Nombre</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></div>
+              <input type="text" name="nombre" ng-required="true" id="nombre" ng-model="pregunta.nombre" class="form-control"/>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+          <button type="button" data-dismiss="modal" ng-click="editar(pregunta)" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
